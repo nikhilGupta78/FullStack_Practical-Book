@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical-6</title>
+    <style>
+      body {
+        background-color: lightgrey;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body h1 {
+        margin-top: 20px;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #container {
+        display: inline-flex;
+      }
+      .box {
+        width: 300px;
+
+        height: 400px;
+        overflow: hidden;
+        border: 2px solid black;
+        margin-bottom: 10px;
+        text-align: justify;
+        text-align: center;
+        padding: 20px;
+        margin-right: 40px;
+        margin-left: 40px;
+        margin-top: 50px;
+      }
+      .box p{
+        text-align: justify;
+      }
+      .box h4 {
+        margin: 20px;
+      }
+      #box1 {
+        background-color:skyblue;
+      }
+      #box2 {
+        background-color:skyblue;
+      }
+      #box3 {
+        background-color:skyblue;
+      }
+      #box4 {
+        background-color:skyblue;
+      }
+      .box img {
+        width: 100%;
+        height: 150px;
+        border-radius: 20px;
+      }
+      .box h2 {
+        text-align: center;
+        margin: 10px;
+      }
+      .mybutton {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: white;
+        font-family: arial;
+        background-color:red;
+        padding: 10px 20px;
+        border-radius: 20px;
+      }
+      .mybutton:hover {
+        background-color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 style="color: white; margin-left: 150px">
+      PRACTICAL:-6: CREATE FOLLOWING LAYOUT USING CSS LAYOUT PROPERTIES
+    </h1>
+
+    <div id="container">
+      <div class="box" id="box1">
+        <div class="image-heading">
+          <img src="./images/HTML IMAGE.jpg" alt="" />
+        </div>
+
+        <h4>Introduction to HTML</h4>
+
+        <p>
+          "Hypertext Markup Language." HTML is the language used to create
+          webpages."Markup language" refers to the way tags are used to 
+          the page layout.
+        </p>
+        <div class="image" style="text-align: center">
+          <a href="./Practical-5-html.html" class="mybutton">Read More</a>
+        </div>
+      </div>
+      <div class="box" id="box2">
+        <div class="image-heading">
+          <img src="./images/CSS.png" alt="" />
+        </div>
+        <h4>Introduction to CSS</h4>
+        <p>
+          CSS stands for Cascading Style Sheets CSS describes how HTML element
+          are to be displayed on screen, paper, or in other media CSS saves a
+          lot of work.
+        </p>
+        <div class="image" style="text-align: center">
+          <a href="./Practical5-CSS.html" class="mybutton">Read More</a>
+        </div>
+      </div>
+      <div class="box" id="box3">
+        <div class="image-heading">
+          <img src="./IMAGES/introduction-to-javascript.png" alt="" />
+        </div>
+        <h4>Introduction to JavaScript</h4>
+        <p>
+          JavaScript is a simple and easy-to-learn programming language as
+          compared to other languages such as C++, Ruby, and Python. It is
+          languages like HTML
+        </p>
+
+        <div class="image" style="text-align: center">
+          <a href="./Practical5-JS.html" class="mybutton">Read More</a>
+        </div>
+      </div>
+      <div class="box" id="box4">
+        <div class="image-heading">
+          <img src="./IMAGES/Intro to SQL.png" alt="" />
+        </div>
+        <h4>Introduction to SQl</h4>
+        <p>
+          SQL is a database computer language designed for the retrieval and
+          management of data in a relational database. SQL stands for Struct
+          Query Language.
+        </p>
+        <div class="image" style="text-align: center">
+          <a href="./Practical5-SQL.html" class="mybutton">Read More</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
