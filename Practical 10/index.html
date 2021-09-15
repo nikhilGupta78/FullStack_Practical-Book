@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Side- Bar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;        
+        }
+        .header
+        {
+            width: 100%;
+            height: 70px;
+            background-color: #2f3640;
+            position: fixed;
+            top: 0;            
+            display: flex;
+            justify-content: center;
+        }
+        .header img
+        {
+            height: 70px;
+            width: 70px;
+            margin-right: 5px;
+        }
+        .header h2
+        {            
+            line-height: 70px;
+            text-align: center;
+            color: white;            
+        }
+        .side-bar
+        {
+            width: 20%;
+            height: 100vh;
+            background-color:#353b48 ;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            margin-top: 70px; 
+            transition: .7s;
+        }
+        ul
+        {
+            list-style: none;
+            margin: 0;padding: 0;
+        }
+        ul li
+        {
+            color: white;
+            border-bottom: 2px solid rgba(255,255,255,.1);
+        }
+        ul li a 
+        {
+            display: block;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 20px;
+        }    
+        ul li a:hover
+        {
+            background-color: #dcdde1;
+        color: black;    
+        }  
+        ul li a:hover i {
+        background-color: #dcdde1;
+        color: black;
+        }
+        a i {
+        font-size: 18px;
+        color: white;
+        margin-right: 20px;
+        }  
+        .show-btn, .hide-btn
+        {
+            position: fixed;
+            font-size: 30px;
+            color: white;
+            transition: .4s;
+            top: 20px;
+            left: 20px;            
+        }
+        .hide-btn
+        {
+            opacity: 0;
+        }
+        #chk
+        {
+            position: absolute;
+            visibility: hidden;  
+             z-index: -100;
+        }
+        
+            #chk:checked ~ .side-bar
+            {
+                left: 0;
+            }
+            #chk:checked ~ .show-btn
+            {
+                opacity: 0;
+            }
+            #chk:checked ~ .hide-btn
+            {
+                opacity: 1;
+            }
+            #chk:checked ~ .main-content
+            {
+                width: 80%;
+            }
+        .main-content
+        {
+            float: right;
+            width: 100%;
+            transition: .7s;
+            padding: 20px;
+        }
+        .main-content img
+        {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: auto;
+            margin-top: 50px;
+            
+        }
+        .main-content p
+        {
+            text-align: justify;
+        }
+        .social
+        {
+            margin-top: 180px;
+            display: flex;
+            justify-content: space-evenly;
+            border-top: 2px solid rgba(255,255,255,.1);
+            border-bottom: 2px solid rgba(255,255,255,.1);
+        }
+        .social i
+        {
+            padding: 10px 0;
+            font-size: 30px;
+            color: white;
+            float: left;
+        }
+
+        @media (max-width: 500px)
+        {
+            .header
+        {
+            width: 100%;
+            height: 70px;
+            background-color:  #2f3640;
+            position: fixed;
+            top: 0;            
+            display: flex;
+            justify-content: center;
+        }
+        .header img
+        {
+            height: 70px;
+            width: 70px;
+            margin-right: 5px;
+        }
+        .header h2
+        {
+            display: none;           
+        }
+            .side-bar
+        {
+            width: 100%;
+            height: 100vh;
+            background-color:#353b48 ;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            margin-top: 70px;
+            transition: .7s;
+            
+        }
+        ul
+        {
+            list-style: none;
+            
+        }
+        ul li
+        {            
+            border-bottom: 2px solid rgba(255,255,255,.1);
+        }
+        ul li a 
+        {
+            display: block;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 20px;
+        }        
+       
+        .show-btn, .hide-btn
+        {
+            position: fixed;
+            font-size: 30px;
+            color: white;
+            line-height: 70px;
+            transition: .4s;
+            top: 0px;
+            left: 20px;            
+        }
+        .hide-btn
+        {
+            opacity: 0;
+        }
+        #chk
+        {
+            position: absolute;
+            visibility: hidden;  
+             z-index: -100;
+        }
+        
+            #chk:checked ~ .side-bar
+            {
+                left: 0;
+            }
+            #chk:checked ~ .show-btn
+            {
+                opacity: 0;
+            }
+            #chk:checked ~ .hide-btn
+            {
+                opacity: 1;
+            }
+            #chk:checked ~ .content
+            {
+                width: 80%;
+            }
+        }
+    </style>
+   
+  <body>
+    <div class="header">
+        <img
+        src="./Images/img1.jpg"
+        alt=""
+      />
+        <h2>FULLSTACK</h2>
+    </div>
+        <input type="checkbox"  id="chk">
+        <label for="chk" class="show-btn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label for="chk" class="hide-btn">
+            <i class="fa fa-times" ></i>
+        </label>
+    <div class="side-bar">
+        <ul>
+            <li>
+              <a href="#"
+                ><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-user" aria-hidden="true"></i><span>About</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-tasks" aria-hidden="true"></i
+                ><span>Services</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-rss" aria-hidden="true"></i><span>Blog</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-id-card" aria-hidden="true"></i
+                ><span>Contact</span></a
+              >
+            </li>
+          </ul>
+      <div class="social">          
+        <a href="#" target="_blank" "><i class="fa fa-facebook-square"></i></a>
+        <a href="#" target="_blank" "><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+        <a href="#" target="_blank" "><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="main-content">
+        <img src="./Images/mohammad-rahmani-LrxSl4ZxoRs-unsplash.jpg" alt="">
+        <p>
+          A full-stack developer is a jack of all trades and a highly sought-after job candidate. The title implies a breadth of knowledge that can be invaluable to short-staffed startups and big companies managing complex apps alike.
+
+          However, the term “full-stack developer” is controversial among developers. Some disparage the idea that anyone could be equally competent across an entire software stack, while others believe that the term has been so overused by employees and employers that it has become somewhat meaningless.
+          
+          A full-stack developer is someone who is competent to deal with the technologies behind the entire application stack—that is, the different layers of technologies that make up a modern application. The term is meant to contrast with developers who focus exclusively on an application’s front end (the UI, usually a website or mobile app) or exclusively on the back end (the business logic that drives the application and the database where the information the application needs is stored).
+
+In theory, a full-stack developer would be as comfortable with the JavaScript code running in the user’s browser as they would be with the MySQL queries that get the information the user wants from a database.
+
+Of course, this calls for mastery of a lot of technologies, a skill so rare that people use the phrase “unicorn” to describe practitioners. In a long and influential diatribe, developer Andy Shora made the claim that these true full-stack developers are a myth—that everyone has more mastery of some aspects of the stack than others, but that the existence of term “full-stack developer” encourages people to overstate some of their skills.
+
+“The basics of the languages/frameworks we learn today can often be picked up in a matter of hours,” he says. “The problem is, I feel the difference between knowing something in web development and truly mastering it is now becoming an increasingly blurred line.”  (Shora identifies himself specifically as a front-end developer.)
+
+Even if you can’t achieve total mastery across the stack, there is value in being comfortable with all the parts of an application. Codeup, which bills itself as a full stack coding bootcamp, offers what it calls a ”realistic” definition:
+        </p>
+    </div>  
+  </body>
+</html>
